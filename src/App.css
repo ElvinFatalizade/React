@@ -1,0 +1,11 @@
+.header{
+  color: red;
+  font-size: 30px;
+}
+ul{
+  list-style-type: none;;
+}
+.far:hover {
+  color: red;
+  transition: liner 1s;
+}
