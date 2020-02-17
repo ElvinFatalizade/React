@@ -1,15 +1,15 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 
 
 
 const UserContext = React.createContext();
-const reducer = (state,action) =>{
+const reducer = (state,action) => {
 
     switch(action.type){
-        case "DELETE_USER":
+        case "DELETEUSER":
             return {
-              ...state,
-                users: state.users.filter(user => action.payload !== user.id )
+                ...state,
+                users: state.users.filter(user => action.payload !== user.Id )
             }
             default:
                 return state
@@ -20,19 +20,19 @@ export  class UserProvider extends Component {
   state={
         users: [
           {
-            id: 1,
+            Id:1,
             name: "Elvin Fatalizade",
             salary: "1500",
             department: "IT"
           },
           {
-            id: 2,
+            Id:2,
             name: "Gunay Ceferzade",
             salary: "1500",
             department: "IT"
           },
           {
-            id: 3,
+            Id:3,
             name: "Rusdam Mammadov",
             salary: "1500",
             department: "IT"
@@ -47,7 +47,7 @@ export  class UserProvider extends Component {
     
     render() {
         return (
-           <UserContext.Provider value={this.state}>
+           <UserContext.Provider value = {this.state}>
             {this.props.children}
            </UserContext.Provider>
         )

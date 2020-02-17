@@ -36,15 +36,16 @@ import UserConsumer from '../context';
 // isvisible true etmek
 
 onClickEvent=(e)=>{
+
     this.setState({
+
         isvisible:!this.state.isvisible
     })
 }
 
 OnDeleteUser=(dispatch,e) => {
  const {id} = this.props;
-
- dispatch({type : "DELETE_USER", payload:id});
+ dispatch({type:"DELETEUSER", payload:id});
 }
 
     render() {
@@ -56,15 +57,15 @@ OnDeleteUser=(dispatch,e) => {
             <UserConsumer>
         {
            value =>{
-               const{dispatch} =value;
+               const{dispatch} = value;
 
-             return (
+             return(
            
             <div className="col-md-8 mb-4">
                 <div className="card">
                     <div className="card-header d-flex justify-content-between">
                     <h4 className="d-inline"onClick={this.onClickEvent} style={{cursor:"pointer"}} >{name}</h4>
-                    <i onClick ={this.OnDeleteUser.bind(this, dispatch)} className="far fa-trash-alt" style={{cursor:"pointer"}} ></i>
+                    <i onClick ={this.OnDeleteUser.bind(this, dispatch)} className="far fa-trash-alt" style={{cursor:"pointer"}}></i>
 
                     </div>
                     {
